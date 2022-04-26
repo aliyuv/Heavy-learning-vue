@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul v-for="item in movies">
+        <li>{{item}}</li>
+    </ul>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            movies: ["海贼王", "快乐星球", "喜羊羊与灰太狼", "最好的我们"]
+        }
+    })
+</script>
+</body>
+</html>
