@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h2>书本总价📚:{{calPrice}}</h2>
+</div>
+<script>
+    Vue.config.productionTip = false;
+    new Vue({
+        el: "#app",
+        data: {
+            books: [
+                {id: 0, name: "Unix编程艺术", price: 150},
+                {id: 1, name: "JavaScript高级程序设计", price: 120},
+                {id: 2, name: "你不知道的JavaScript", price: 100},
+                {id: 3, name: "精通CSS", price: 80},
+                {id: 4, name: "JavaScript重难点", price: 95},
+                {id: 5, name: "如何高效学习", price: 50},
+                {id: 6, name: "认知觉醒", price: 115},
+                {id: 7, name: "JavaScript忍着秘籍", price: 108},
+                {id: 8, name: "深入理解计算机操作系统", price: 200},
+            ]
+        },
+        computed: {
+            calPrice() {
+                return this.books.reduce((sum, current) => sum + current.price, 0);
+            }
+        }
+    })
+</script>
+</body>
+</html>
