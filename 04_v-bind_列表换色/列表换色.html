@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        .active {
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in movies" :key="index" @click="handlerLi(index)" :class="{active:flag===index}">
+            {{index}}-{{item}}
+        </li>
+    </ul>
+</div>
+
+<script>
+
+    /*我们把当前的index作为参数传递给了handlerLi()函数，他把当前的index动态绑定给this.flag，
+    那就只有在当前的li中，flag==index才为true，所以当前被点击的active:true，高亮的类才生效。
+    flag初始值得设为0，因为在页面还没被点击，要渲染页面时，也会判断flag==index，这是第一个index为0，所以第一个li高亮显示。
+    总结：
+    这个例子很好的用到了MVVM的思想，当我们数据flag是0（M层）时，V层用flag=0和index自动去做判断，
+    第一行高亮；当点击li时，index发生改变，flag也发生改变，V层自动拿改变了的flag去做判断，
+    当前行高亮。通过v-bind绑定class属性实现双向数据绑定。*/
+
+    new Vue({
+        el: "#app",
+        data: {
+            movies: ["快乐星球", "迪迦奥特曼", "喜羊羊与灰太狼", "小猪佩奇"],
+            flag: 0
+        },
+        methods: {
+            handlerLi(index) {
+                this.flag = index;
+            }
+        }
+    })
+</script>
+</body>
+</html>
