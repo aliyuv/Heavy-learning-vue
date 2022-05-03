@@ -9,7 +9,7 @@
 <div id="app">
     <label>
         <!--        <input type="text" v-model="message"> {{message}}-->
-<!--        <input type="text" v-bind:value="message" v-on:input="message = $event.target.value">{{message}}-->
+        <!--        <input type="text" v-bind:value="message" v-on:input="message = $event.target.value">{{message}}-->
         <input type="text" :value="message" @input="message = $event.target.value">{{message}}
     </label>
 </div>
