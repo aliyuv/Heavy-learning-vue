@@ -7,15 +7,22 @@
 </head>
 <body>
 <div id="app">
-    <label for="agree"></label><input type="checkbox" name="agree" id="agree" v-model="isAgree">同意离婚协议
-    <h2>当前值:{{isAgree}}</h2>
-    <button :disabled="!isAgree">下一步</button>
+    <!--    <label for="agree"></label><input type="checkbox" name="agree" id="agree" v-model="isAgree">同意离婚协议-->
+    <!--    <h2>当前值:{{isAgree}}</h2>-->
+    <!--    <button :disabled="!isAgree">下一步</button>-->
+
+    <label for="basketball"></label><input type="checkbox" name="basketball" id="basketball" value="篮球" v-model="hobby">
+    篮球
+    <label for="badminton"></label><input type="checkbox" name="badminton" id="badminton" value="乒乓球" v-model="hobby">乒乓球
+    <label for="football"></label><input type="checkbox" name="football" id="football" value="足球" v-model="hobby">足球
+    <h2>您的爱好是:{{hobby}}</h2>
 </div>
 <script>
     new Vue({
         el: "#app",
         data: {
-            isAgree: false
+            isAgree: false,
+            hobby: []
         }
     })
 </script>
