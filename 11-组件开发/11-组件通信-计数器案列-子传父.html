@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!-- 在使用child-cpn的时候 通过 @increment @decrement监听事件  -->
+    <child-cpn @increment="changeTotal" @decrement="changeTotal"></child-cpn>
+    <h2>点击次数:{{total}}</h2>
+</div>
+<template id="childCpn">
+    <div>
+        <button @click="increment">+1</button>
+        <button @click="decrement">-1</button>
+    </div>
+</template>
+<script>
+    const vm = new Vue({
+        el: "#app",
+        data: {
+            total: 0
+        },
+        methods: {
+            //接受子组件传过来的值
+            changeTotal(counter) {
+                this.total = counter;
+            }
+        },
+        components: {
+            'child-cpn': {
+                template: "#childCpn",
+                data() {
+                    return {
+                        counter: 0
+                    }
+                },
+                //第一步:在子组件发射事件
+                methods: {
+                    increment() {
+                        this.counter += 1;
+                        this.$emit('increment', this.counter);
+                    },
+                    decrement() {
+                        this.counter -= 1;
+                        this.$emit('decrement', this.counter);
+                    }
+                }
+            }
+        },
+    })
+</script>
+</body>
+</html>
