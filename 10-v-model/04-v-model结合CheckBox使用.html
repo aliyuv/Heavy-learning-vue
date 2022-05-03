@@ -11,18 +11,24 @@
     <!--    <h2>当前值:{{isAgree}}</h2>-->
     <!--    <button :disabled="!isAgree">下一步</button>-->
 
-    <label for="basketball"></label><input type="checkbox" name="basketball" id="basketball" value="篮球" v-model="hobby">
+    <label for="basketball"></label><input type="checkbox" name="basketball" id="basketball" value="篮球"
+                                           v-model="hobbies">
     篮球
-    <label for="badminton"></label><input type="checkbox" name="badminton" id="badminton" value="乒乓球" v-model="hobby">乒乓球
-    <label for="football"></label><input type="checkbox" name="football" id="football" value="足球" v-model="hobby">足球
-    <h2>您的爱好是:{{hobby}}</h2>
+    <label for="badminton"></label><input type="checkbox" name="badminton" id="badminton" value="乒乓球" v-model="hobbies">乒乓球
+    <label for="football"></label><input type="checkbox" name="football" id="football" value="足球" v-model="hobbies">足球
+    <h2>您的爱好是:{{hobbies}}</h2>
+
+    <label v-for="item in originHobbies" :for="item">
+        <input type="checkbox" :id="item" :value="item" v-model="hobbies">{{item}}
+    </label>
 </div>
 <script>
     new Vue({
         el: "#app",
         data: {
             isAgree: false,
-            hobby: []
+            hobbies: [],
+            originHobbies: ['篮球', '足球', '乒乓球', '羽毛球', '台球', '高尔夫球']
         }
     })
 </script>
