@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <cpn></cpn>
+</div>
+
+<!--第一种写法-->
+<!--<script type="text/x-template" id="cpn">-->
+<!--    <div>-->
+<!--        <h1>我是组件标题</h1>-->
+<!--        <p>我是组件内容,哈哈哈哈哈哈哈哈哈</p>-->
+<!--    </div>-->
+<!--</script>-->
+
+<!--第二种写法:template标签-->
+<template id="cpn">
+    <div>
+        <h1>我是组件标题</h1>
+        <p>我是组件内容,哈哈哈哈哈哈哈哈哈</p>
+    </div>
+</template>
+<script>
+
+    //注册组件
+    Vue.component('cpn', {
+        template: '#cpn'
+    })
+    const vm = new Vue({
+        el: "#app"
+    })
+</script>
+</body>
+</html>
