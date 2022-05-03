@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <label for="agree"></label><input type="checkbox" name="agree" id="agree" v-model="isAgree">同意离婚协议
+    <h2>当前值:{{isAgree}}</h2>
+    <button :disabled="!isAgree">下一步</button>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            isAgree: false
+        }
+    })
+</script>
+</body>
+</html>
