@@ -9,12 +9,16 @@
 <div id="app">
     <label for="message"></label><input type="text" name="message" id="message" v-model.lazy="message">
     <h2>{{message}}</h2>
+
+    <label for="num"></label><input type="text" name="num" id="num" v-model.number="num">
+    <h2>{{num}}-{{typeof num}}</h2>
 </div>
 <script>
     new Vue({
         el: "#app",
         data: {
-            message: "你好啊"
+            message: "你好啊",
+            num: 0
         }
     })
 </script>
