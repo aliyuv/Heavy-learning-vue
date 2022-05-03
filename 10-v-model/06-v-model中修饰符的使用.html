@@ -12,13 +12,17 @@
 
     <label for="num"></label><input type="text" name="num" id="num" v-model.number="num">
     <h2>{{num}}-{{typeof num}}</h2>
+
+    <label for="name"></label><input type="text" name="name" id="name" v-model.trim="name">
+    <h2>{{name}}</h2>
 </div>
 <script>
-    new Vue({
+    const vm = new Vue({
         el: "#app",
         data: {
             message: "你好啊",
-            num: 0
+            num: 0,
+            name: ""
         }
     })
 </script>
