@@ -16,13 +16,14 @@ const profile = () => import('../components/profile');
 //安装
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld,
-      redirect: '/home'
+      redirect: '/home',
+
     },
     {
       path: '/home',
@@ -33,7 +34,10 @@ export default new Router({
           path: 'news',
           component: HomeNews
         }
-      ]
+      ],
+      meta:{
+        title: '首页'
+      }
     },
     {
       path: '/about',
@@ -42,7 +46,10 @@ export default new Router({
     },
     {
       path: '/user/:id',
-      component: User
+      component: User,
+      meta: {
+        title: '用户'
+      }
     },
     {
       path: '/profile',
@@ -51,3 +58,8 @@ export default new Router({
   ],
   linkActiveClass: 'active'
 })
+router.beforeEach((to, from, next) => {
+  document.title = to.matched[0].meta.title
+  next()
+})
+export default router;
