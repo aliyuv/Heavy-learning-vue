@@ -18,7 +18,7 @@
       </TabBarItem>
       <TabBarItem>
         <img src="./assets/img/tabbar/profile.svg" alt="" slot="item-icon">
-        <img src="./assets/img/tabbar/profile_active.svg" alt="" slot="item-icon">
+        <img src="./assets/img/tabbar/profile_active.svg" alt="" slot="item-icon-active">
         <div slot="item-text">我的</div>
       </TabBarItem>
     </TabBar>
