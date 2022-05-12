@@ -9,7 +9,9 @@
     <!--    <router-link to="/about" tag="button">about</router-link>-->
     <button @click="userClick">用户user</button>
     <button @click="profileClick">用户档案信息</button>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
