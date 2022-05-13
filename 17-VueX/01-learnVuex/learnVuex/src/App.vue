@@ -5,6 +5,9 @@
     <button @click="add">+1</button>
     <button @click="sub">-1</button>
     <hellowVuex></hellowVuex>
+    {{$store.getters.more20yx}}
+   {{$store.getters.more20yxlength}}
+    <h1>{{$store.getters.more20fn(22)}}</h1>
   </div>
 </template>
 
