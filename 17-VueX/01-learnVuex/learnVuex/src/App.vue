@@ -34,7 +34,11 @@ export default {
       this.$store.commit('decrment');
     },
     commit20(counter) {
-      this.$store.commit('incrementcounter', counter);
+      // this.$store.commit('incrementcounter', counter);
+      this.$store.commit({
+        type:'incrementcounter',
+        counter
+      })
     },
     addyx() {
       const yasuo = {id: 20, name: '亚索', age: 35}
