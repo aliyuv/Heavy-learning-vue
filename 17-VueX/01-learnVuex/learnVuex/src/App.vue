@@ -10,6 +10,8 @@
     <h1>{{ $store.getters.more20fn(22) }}</h1>
     <button @click="commit20(20)">提交数据20</button>
     <button @click="addyx">添加英雄</button>
+    <h2>{{$store.state.info}}</h2>
+    <button @click="addprop">添加属性</button>
   </div>
 </template>
 
@@ -43,6 +45,9 @@ export default {
     addyx() {
       const yasuo = {id: 20, name: '亚索', age: 35}
       this.$store.commit('addyingxiong', yasuo)
+    },
+    addprop(){
+      this.$store.commit('addprop');
     }
   }
 }

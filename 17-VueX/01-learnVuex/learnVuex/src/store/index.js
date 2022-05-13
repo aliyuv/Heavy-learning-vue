@@ -21,7 +21,12 @@ const store = new Vuex.Store({
       {
         id: 3, name: '男刀', age: 22
       }
-    ]
+    ],
+    info: {
+      name: 'jams',
+      age: 25,
+      sex: '男'
+    }
   },
   mutations: {
     increment(state) {
@@ -33,8 +38,11 @@ const store = new Vuex.Store({
     incrementcounter(state, payload) {
       state.count += payload.counter
     },
-    addyingxiong(state,yingxiong){
+    addyingxiong(state, yingxiong) {
       state.yingxiong.push(yingxiong)
+    },
+    addprop(state) {
+      Vue.set(state.info, 'address', '西雅图')
     }
   },
   getters: {
