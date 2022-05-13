@@ -5,9 +5,11 @@
     <button @click="add">+1</button>
     <button @click="sub">-1</button>
     <hellowVuex></hellowVuex>
-    {{$store.getters.more20yx}}
-   {{$store.getters.more20yxlength}}
-    <h1>{{$store.getters.more20fn(22)}}</h1>
+    {{ $store.getters.more20yx }}
+    {{ $store.getters.more20yxlength }}
+    <h1>{{ $store.getters.more20fn(22) }}</h1>
+    <button @click="commit20(20)">提交数据20</button>
+    <button @click="addyx">添加英雄</button>
   </div>
 </template>
 
@@ -30,6 +32,13 @@ export default {
     },
     sub() {
       this.$store.commit('decrment');
+    },
+    commit20(counter) {
+      this.$store.commit('incrementcounter', counter);
+    },
+    addyx() {
+      const yasuo = {id: 20, name: '亚索', age: 35}
+      this.$store.commit('addyingxiong', yasuo)
     }
   }
 }

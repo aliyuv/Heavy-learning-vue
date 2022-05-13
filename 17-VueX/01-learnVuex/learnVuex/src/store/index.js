@@ -29,6 +29,12 @@ const store = new Vuex.Store({
     },
     decrment(state) {
       state.count -= 1
+    },
+    incrementcounter(state, counter) {
+      state.count += counter
+    },
+    addyingxiong(state,yingxiong){
+      state.yingxiong.push(yingxiong)
     }
   },
   getters: {
