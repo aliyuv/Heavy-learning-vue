@@ -14,6 +14,7 @@
     <button @click="addprop">添加属性</button>
     <h2>APP组件:Vuex-module 内容展示</h2>
     <p>{{$store.state.a.name}}</p>
+    <p>{{$store.getters.computedNameProp}}</p>
     <button @click="updateName">更改name</button>
   </div>
 </template>
@@ -53,7 +54,7 @@ export default {
       this.$store.commit('addprop');
     },
     updateName(){
-      this.$store.commit('updateName','沈兰')
+      this.$store.dispatch('updatNameAction')
     }
   }
 }
